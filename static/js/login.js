@@ -1,7 +1,7 @@
 var obj = {}
 
 if(localStorage.getItem("isLoggedIn")){
-    window.location.replace(window.location.origin + "/orders.html")
+    window.location.href = "./orders.html";
 }
 document.getElementById("loginBtn").addEventListener("click", function (e) {
     e.preventDefault()
@@ -19,7 +19,7 @@ document.getElementById("loginBtn").addEventListener("click", function (e) {
             success: (success) => {
                 localStorage.setItem('isLoggedIn', true)
                 alert('Login Successfull')
-                window.location.href = 'orders.html'
+                window.location.href = './orders.html'
             }
         });
     } else {

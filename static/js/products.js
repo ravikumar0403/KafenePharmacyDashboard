@@ -8,7 +8,7 @@ if(localStorage.getItem("isLoggedIn")){
     });
 }else{
     alert("Please Login to access this page")
-    window.location.replace(window.location.origin + "/index.html")
+    window.location.href = "./index.html";
 }
 
 function generateTableRow(products){
