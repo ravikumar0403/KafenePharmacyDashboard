@@ -1,0 +1,3 @@
+$("#logOut").click(() => {
+    localStorage.clear()
+})
