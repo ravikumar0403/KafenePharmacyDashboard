@@ -38,8 +38,8 @@ $('.filter-checkbox').change(() => {
     let stockCheck = $("#stock").prop('checked')
 
     var filteredList = productData.filter((value, key) => {
-        if (!expiredCheck && expiry(value.expiryDate)) return false
-        if (!stockCheck && value.stock < 100) return false
+        if (expiredCheck && expiry(value.expiryDate)) return false
+        if (stockCheck && value.stock > 100) return false
         return true;
     })
     generateTableRow(filteredList)
@@ -63,5 +63,5 @@ function expiry(dateStr){
     let [day, month, year] = dateStr.split("-")
     var expiryDate = new Date(year, monthsObj[month], day);
     var today = new Date();
-    return(expiryDate.getTime() < today.getTime());
+    return(expiryDate.getTime() > today.getTime());
 }
